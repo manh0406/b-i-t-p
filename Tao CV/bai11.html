@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script >
+  //bai 1
+  let vatLy = parseFloat(prompt("Nhập điểm Vật lý:"));
+  let hoaHoc = parseFloat(prompt("Nhập điểm Hóa học:"));
+  let sinhHoc = parseFloat(prompt("Nhập điểm Sinh học:"));
+
+  let
+          tongDiem = vatLy + hoaHoc + sinhHoc;
+  let diemTrungBinh = tongDiem / 3;
+
+
+  alert("Tổng điểm: " + tongDiem);
+  alert("Điểm trung bình: " + diemTrungBinh);
+  // bai 2
+  let celsius = parseFloat(prompt("Nhập nhiệt độ Celsius:"));
+  let fahrenheit = (celsius * 9/5) + 32;
+
+  alert(celsius + " độ C tương đương với " + fahrenheit + " độ F");
+  // bai 3
+  let banKinh = parseFloat(prompt("Nhập bán kính hình tròn:"));
+  const PI = 3.14;
+  let dienTich = PI * banKinh * banKinh;
+
+  alert("Diện tích hình tròn là: " + dienTich);
+  // bai 4
+  let banKinh = parseFloat(prompt("Nhập bán kính hình tròn:"));
+  const PI = 3.14;
+  let chuVi = 2 * PI * banKinh;
+
+  alert("Chu vi hình tròn là: " + chuVi);
+</script>
+</body>
+</html>
