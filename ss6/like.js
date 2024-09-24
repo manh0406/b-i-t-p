@@ -15,4 +15,16 @@ let b = prompt("b");
 console.log(b)
 alert(a + b)
 */
+let thu = prompt("Nhap thu")
+switch (thu){
+    case "1": console.log("Chu Nhat"); break; // Nếu không có từ khóa break
+
+case "2":
+    console.log("Thu hai"); break;
+
+case "3":
+    console.log("Thu ba"); break;
+    default:console.log("khong hop le "); break;
+}
+
 

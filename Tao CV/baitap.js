@@ -4,7 +4,7 @@
 //document.getElementById("btn").addEventListener("click", function () {
  //   alert("Hello")
 //})
-let userName = prompt("who is there?", '');
+/*let userName = prompt("who is there?", '');
 if (userName == 'Admin'){
     let pass = prompt('Password?', '');
     if(pass == 'TheMaster') {
@@ -18,4 +18,13 @@ if (userName == 'Admin'){
 
 }else{
     alert("I don't know you");
-}
+}*/
+let Login = prompt("Enter :");
+let message = (Login == 'Employee') ?
+    'Hello':
+    (Login == 'Director')?
+        'Greetings' :
+        (login == '') ?
+            'No login' :
+            '';
+alert(mesage);
