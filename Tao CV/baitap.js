@@ -19,7 +19,7 @@ if (userName == 'Admin'){
 }else{
     alert("I don't know you");
 }*/
-let Login = prompt("Enter :");
+/*let Login = prompt("Enter :");
 let message = (Login == 'Employee') ?
     'Hello':
     (Login == 'Director')?
@@ -27,4 +27,24 @@ let message = (Login == 'Employee') ?
         (login == '') ?
             'No login' :
             '';
-alert(mesage);
+alert(mesage);*/
+let a = +prompt('a?', '');
+switch(a){
+    case 0:
+        alert(0);
+        break;
+        case 1:
+            alert(1);
+        case 2:
+            case 3:
+            alert('2,3');
+            break;
+}
+let value = prompt('Type a number', 0);
+if(value > 0){
+    alert('1');
+}else if(value < 0){
+    alert(-1);
+}else{
+    alert(0);
+}
