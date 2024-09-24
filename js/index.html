@@ -1,10 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<input type="text" id="inputData" placeholder="nhập dữ liệu" value="12344">
+<button onclick="hienthi()">Nhập</button>
+<h1 id="hienthi"></h1>
+<script>
+  //Output
+ // alert("Hello");
+  //console.log("hello");
+  //document.write("<h1>Hello</h1>");
+ // document.getElementById("hiethi").innerHTML="Xin chao"; // Hieenr thi vao thr html thong qua id
+  // Input : nhập dữ liệu vào
+  // let a =prompt("Nhập dữ liệu đi:") // Nhập dữ lieeuj từ hộp thoại
+   //alert("Hello")
+  function hienthi() {
+    let data = document.getElementById("inputData").value;
+    document.getElementById("hienthi").innerHTML= data;
+  }
+  //onlcick cho phép kết hpwj với javascript để lấy dữ liệu
+
+  //Biến : tên gọi 1 ô nhớ chứa dữ liệu
+  // Cách khai báo biến : 3 cách khai bo biến : let, var, const
+  // let ten_bien = gia_tri
+  // Cos thể gán lại biến
+  //let a = 10;
+ // a = 11;
+  //alert(a);
+
+  //số (number)
+  //let a = 10;
+ // alert(a);
+  // chuỗi (string)
+ // let b = 'abc hehe'; //"" , ``
+  // boolean: có 2 giá trị 1 là true 2 là false
+  //let c = true;
+  //c = false;
+  //console.log(typeof c);
+  //let d = {
+   // name: "linh",
+   // age: 27}
+    //console.log(typeof d);
+   // -->//
+
+
+  // object
+  /*
+  Toán tử toán học: + - * / %
+  let a =5;
+  let b = 10;
+  let c = a % b;
+  //alert("Gía trị của  c " + c);
+  a++; // ++ : tăng lên 1 đơn vị
+  alert("Gía trị của a là:" + a);
+  -Toán tử gán: =
+  let a = 5;//gán giá trị
+a += 5;// <==> a = a + 5
+  alert("Gía trị của a " + a);
+  -Toán tử so sánh: > < == === >= <= != !==
+
+   */
+  let a = 10;
+  let b = 20;
+  alert(a>b);//boolean false
+   let c  = "linh";
+   let d = "Abc";
+   alert(c !== d);
+
+
+
+</script>
 </body>
 </html>
