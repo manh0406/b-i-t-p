@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính số ngày trong tháng</h1>
+
+<div class="month-container">
+  <label for="month1">Tháng 1:</label>
+  <input type="number" id="month1" min="1" max="12">
+  <button onclick="calculateDays(1)">Tính số ngày</button>
+  <p id="result1"></p>
+</div>
+
+<div class="month-container">
+  <label for="month2">Tháng 2:</label>
+  <input type="number" id="month2" min="1" max="12">
+  <button onclick="calculateDays(2)">Tính số ngày</button>
+  <p id="result2"></p>
+</div>
+
+<script>
+  function calculateDays(month) {
+    let days;
+
+    if (month === 2) {
+      // Xác định năm nhuận
+      const year = new Date().getFullYear();
+      days = (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) ? 29 : 28;
+    } else {
+      days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1];
+    }
+
+    const resultElement = document.getElementById(`result${month}`);
+    resultElement.textContent = `Tháng ${month} có ${days} ngày`;
+  }
+</script>
+
+</body>
+</html>
