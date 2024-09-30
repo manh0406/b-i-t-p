@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /* bài 1
+    function celsiusToFahrenhiet(celsius) {
+        let fahrenheit = celsius * 9/5 + 32;
+        return fahrenheit;
+    }
+    let celsius = prompt("Nhập nhiệt độ Celsius: ");
+    let result = celsiusToFahrenhiet(celsius);
+    console.log(result + " độ F ");
+    bài 2
+    function meterToFeet(meter) {
+  let feet = meter * 3.2808;
+  return feet;
+}
+
+let meter = prompt("Nhập độ dài mét: ");
+let result = meterToFeet(meter);
+console.log(result + " feet");
+bài 3
+function tinhDienTichHinhVuong(canh) {
+  let dienTich = canh * canh;
+  return dienTich;
+}
+
+let canh = prompt("Nhập độ dài cạnh hình vuông: ");
+let result = tinhDienTichHinhVuong(canh);
+console.log("Diện tích hình vuông là: " + result);
+bài 4
+function tinhDienTichHinhChuNhat(chieuDai, chieuRong) {
+  let dienTich = chieuDai * chieuRong;
+  return dienTich;
+}
+
+let chieuDai = prompt("Nhập chiều dài hình chữ nhật: ");
+let chieuRong = prompt("Nhập chiều rộng hình chữ nhật: ");
+let result = tinhDienTichHinhChuNhat(chieuDai, chieuRong);
+console.log("Diện tích hình chữ nhật là: " + result);
+bài 5
+function tinhDienTichTamGiacVuong(canh1, canh2) {
+  let dienTich = (canh1 * canh2) / 2;
+  return dienTich;
+}
+
+bài 6
+function giaiPhuongTrinhBac1(a, b) {
+  if (a === 0) {
+    if (b === 0) {
+      console.log("Phương trình có vô số nghiệm");
+    } else {
+      console.log("Phương trình vô nghiệm");
+    }
+  } else {
+    let x = -b / a;
+    console.log("Nghiệm của phương trình là: " + x);
+  }
+}
+
+bài 7
+function giaiPhuongTrinhBac2(a, b, c) {
+  // Tính delta
+  let delta = b*b - 4*a*c;
+
+  if (delta < 0) {
+    console.log("Phương trình vô nghiệm");
+  } else if (delta === 0) {
+    let x = -b / (2*a);
+    console.log("Phương trình có nghiệm kép: x = " + x);
+  } else {
+    let x1 = (-b + Math.sqrt(delta)) / (2*a);
+    let x2 = (-b - Math.sqrt(delta)) / (2*a);
+    console.log("Phương trình có hai nghiệm phân biệt: x1 = " + x1 + ", x2 = " + x2);
+  }
+}
+bài 8
+function kiemTraTuoi(tuoi) {
+  return tuoi > 0 && tuoi < 120;
+}
+
+let tuoiNhap = prompt("Nhập tuổi: ");
+tuoiNhap = parseInt(tuoiNhap);
+
+if (kiemTraTuoi(tuoiNhap)) {
+  console.log(tuoiNhap + " là tuổi của một người.");
+} else {
+  console.log(tuoiNhap + " không phải là tuổi của một người.");
+}
+bài 9
+function kiemTraTamGiac(a, b, c) {
+  return a > 0 && b > 0 && c > 0 && a + b > c && b + c > a && a + c > b;
+}
+bài 10
+function tinhTienDien(soKW) {
+  let tienDien = 0;
+  if (soKW <= 50) {
+    tienDien = soKW * 1678;
+  } else if (soKW <= 100) {
+    tienDien = 50 * 1678 + (soKW - 50) * 1734;
+  } else if (soKW <= 200) {
+    tienDien = 50 * 1678 + 50 * 1734 + (soKW - 100) * 2014;
+  } else {
+    tienDien = 50 * 1678 + 50 * 1734 + 100 * 2014 + (soKW - 200) * 2536;
+  }
+  return tienDien;
+}
+bài 12
+function tinhLaiNgamHang(soTienGui, soThang, laiSuatHangThang) {
+  let tienLai = soTienGui;
+  for (let i = 0; i < soThang; i++) {
+    tienLai = tienLai * (1 + laiSuatHangThang);
+  }
+  return tienLai - soTienGui;
+}
+bài 11
+function tinhThueThuNhapCaNhan(thuNhapChiuThue) {
+  // Bảng thuế giả định (bạn cần thay thế bằng bảng thuế thực tế)
+  const bacThue = [
+    { min: 0, max: 5000000, thueSuat: 5 },
+    { min: 5000001, max: 10000000, thueSuat: 10 },
+    { min: 10000001, max: 18000000, thueSuat: 15 },
+    // ... các bậc thuế khác
+  ];
+
+  let thuePhaiNop = 0;
+  for (let i = 0; i < bacThue.length; i++) {
+    const bac = bacThue[i];
+    if (thuNhapChiuThue > bac.max) {
+      thuePhaiNop += (bac.max - bac.min + 1) * bac.thueSuat / 100;
+    } else if (thuNhapChiuThue > bac.min) {
+      thuePhaiNop += (thuNhapChiuThue - bac.min) * bac.thueSuat / 100;
+      break;
+    }
+  }
+
+  return thuePhaiNop;
+}
+
+// Ví dụ: Tính thuế cho thu nhập chịu thuế là 8.000.000 đồng
+let thuNhap = 8000000;
+let thue = tinhThueThuNhapCaNhan(thuNhap);
+console.log("Thuế phải nộp: " + thue + " đồng");
+     */
+  </script>
+
+</body>
+</html>
