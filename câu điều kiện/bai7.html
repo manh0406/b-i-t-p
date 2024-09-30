@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Do you love me?</h1>
+<div>
+  <button class="button">YES</button>
+  <button class="button">NO</button>
+</div>
+<script>
+  const yesButton = document.querySelector('.button:first-child');
+  const noButton = document.querySelector('.button:last-child');
+
+  yesButton.addEventListener('click', () => {
+    alert('<3');
+  });
+
+  noButton.addEventListener('mouseover', () => {
+    const randomX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+    const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+    noButton.style.left = randomX + 'px';
+    noButton.style.top = randomY + 'px';
+  });
+</script>
+</body>
+</html>
