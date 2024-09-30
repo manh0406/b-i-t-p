@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Calculator</h1>
+
+<div class="calculator">
+    <input type="text" id="result" readonly>
+
+    <div class="buttons">
+        <button class="number"  
+                value="7">7</button>
+        <button class="number" value="8">8</button>
+        <button class="number" value="9">9</button>
+        <button class="operator" value="+">+</button>
+        <button class="clear"  
+                value="C">C</button>
+        <br>
+        <button class="number" value="4">4</button>
+        <button class="number" value="5">5</button>
+        <button class="number" value="6">6</button>
+        <button  
+                class="operator" value="-">-</button>  
+
+        <br>
+        <button class="number" value="1">1</button>
+        <button class="number" value="2">2</button>
+        <button class="number" value="3">3</button>
+        <button class="operator" value="*">*</button>
+        <br>
+        <button class="number" value="0">0</button>  
+
+        <button class="decimal" value=".">.</button>
+        <button class="equal" value="=">=</button>
+        <button class="operator" value="/">/</button>
+    </div>
+</div>
+
+<script>
+
+    const result = document.getElementById("result");
+    const buttons = document.querySelectorAll(".button");
+
+    let currentInput = "";
+    let currentOperator
+        = "";
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const value = button.value;
+
+            if (value === "=") {
+                calculate();
+            } else if (value === "." && !currentInput.includes(".")) {
+                currentInput += value;
+                updateResult();
+            } else if (value === "C") {
+                clear();
+            } else if (isOperator(value)) {
+                handleOperator(value);
+            } else {
+                currentInput += value;
+                updateResult();
+            }
+        });
+    });
+
+    function isOperator(value) {
+        return ["+", "-", "*", "/", "="].includes(value);
+    }
+
+    function handleOperator(value) {
+        if (currentInput === "") {
+            return; // Ignore operator if no input
+        }
+
+        currentOperator = value;
+        currentInput += value;
+        updateResult();
+    }
+
+    function calculate() {
+        if (currentOperator === "") {
+            return; // Ignore calculation if no operator
+        }
+
+        const num1 = parseFloat(currentInput.split(currentOperator)[0]);
+        const num2 = parseFloat(currentInput.split(currentOperator)[1]);
+
+        let resultValue;
+        switch (currentOperator) {
+            case "+":
+                resultValue = num1 + num2;
+                break;
+            case "-":
+                resultValue = num1 - num2;
+                break;
+            case "*":
+                resultValue = num1 * num2;
+                break;
+
+            case "/":
+                if (num2 === 0) {
+                    resultValue
+                        = "Error: Division by zero";
+                } else {
+                    resultValue = num1 / num2;
+                }
+                break;
+            default:
+                return;
+        }
+
+        if (isNaN(resultValue)) {
+            resultValue = "Error: Invalid input";
+        }
+
+        currentInput = resultValue.toString();
+        updateResult();
+    }
+
+    function updateResult() {
+        result.value = currentInput;
+    }
+
+    function clear() {
+        currentInput = "";
+        currentOperator = "";
+        updateResult();
+    }
+</script>
+</body>
+</html>
