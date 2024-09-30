@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  .toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #ccc;
+    cursor: pointer;
+  }
+
+  .toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .toggle.active::before {
+    left: 30px;
+  }
+
+  .label {
+    margin-left: 10px;
+  }
+</style>
+<body>
+<div class="toggle">
+  <div class="label">GOOD</div>
+</div>
+<div class="toggle">
+  <div class="label">CHEAP</div>
+</div>
+<div class="toggle">
+  <div class="label">FAST</div>
+</div>
+<script>
+  const toggles = document.querySelectorAll('.toggle');
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+
+    });
+  });
+</script>
+</body>
+</html>
