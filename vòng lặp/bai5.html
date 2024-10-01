@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+  <title>Bảng Cửu Chương</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<table id="multiplicationTable"></table>
+<script>
+  function createMultiplicationTable() {
+    const table = document.getElementById("multiplicationTable");
+    const rows = 10;
+    const cols = 10;
+
+    for (let i = 1; i <= rows; i++) {
+      const row = table.insertRow();
+      for (let j = 1; j <= cols; j++) {
+        const cell = row.insertCell();
+        cell.textContent = `${i} x ${j} = ${i * j}`;
+      }
+    }
+  }
+
+  createMultiplicationTable();
+</script>
+</body>
+</html>
