@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    function findPrimeNumbers(count) {
+        let numbers = [];
+        let N = 2;
+
+        while (numbers.length < count) {
+            if (isPrime(N)) {
+                numbers.push(N);
+            }
+            N++;
+        }
+
+        return numbers;
+    }
+
+    function isPrime(num) {
+        if (num <= 1) {
+            return false;
+        }
+
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    const numberOfPrimes = parseInt(prompt("Nhập số lượng số nguyên tố cần hiển thị: "));
+    const primeNumbers = findPrimeNumbers(numberOfPrimes);
+    document.getElementById("result").textContent = "Các số nguyên tố đầu tiên: " + primeNumbers.join(", ");
+</script>
+</body>
+</html>
