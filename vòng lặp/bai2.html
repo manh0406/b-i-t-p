@@ -5,15 +5,30 @@
     <title>Title</title>
 </head>
 <body>
-<!--Bài 2: Viết chương trình nhập vào một số bất kỳ lớn hơn 0. Tính tổng các phần tử từ 1 đến số vừa nhập vào.-->
-<script>
-  let number = prompt("Nhap so vao: ");
+
+  /*bai 3
   let total = 0;
-  let i = 1;
-  for (; i <= num;  i +=1){
-    total += i;
+let num;
+while (true) {
+  num = parseInt(prompt("Nhập một số (nhập -1 để kết thúc): "));
+  if (num === -1) {
+    break;
   }
-  alert(total);
+  total += num;
+  console.log("Bạn đã nhập:", num);
+}
+console.log("Tổng các số là:", total);
+bai 2
+let i = 1;
+let container = document.createElement('div');
+document.body.appendChild(container);
+while (i <= 100) {
+  let hr = document.createElement('hr');
+  hr.style.width = i + '%';
+  container.appendChild(hr);
+  i++;
+}
+   */
 </script>
 </body>
 </html>
