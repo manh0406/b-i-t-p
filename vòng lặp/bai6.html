@@ -10,7 +10,6 @@
     function findPrimeNumbers(count) {
         let numbers = [];
         let N = 2;
-
         while (numbers.length < count) {
             if (isPrime(N)) {
                 numbers.push(N);
@@ -31,7 +30,6 @@
                 return false;
             }
         }
-
         return true;
     }
     const numberOfPrimes = parseInt(prompt("Nhập số lượng số nguyên tố cần hiển thị: "));

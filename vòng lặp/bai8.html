@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dãy Fibonacci và kiểm tra chia hết cho 5</title>
+</head>
+<body>
+<script>
+   /* bài 2
+    let nhietdo = +prompt("Nhiệt độ hiện tại: ")
+    if(nhietdo > 100){
+        alert('yêu cầu người dùng giảm nhiệt độ');
+    } else if(nhietdo < 20){
+        alert('yêu cầu người dùng tăng nhiệt độ');
+    }else{
+        alert('nhiệt độ ổn định ')
+    }
+
+bài 2
+   function fibonacci() {
+       let fib = [0, 1];
+       for (let i = 2; i < n; i++) {
+           fib[i] = fib[i - 1] + fib[i - 2];
+       }
+       return fib;
+   }
+   const  n = +prompt("Nhập số lượng fibonacci: ");
+   const result = fibonacci(20);
+   console.log(result);*/
+   //bai 3
+   /*function fibonacci(){
+       let fib = [0, 1];
+       for(let i = 2; i < n; i++){
+           fib[i] = fib[i -1] + fib[i -2];
+
+               return fib;
+           }
+       function findFirstDivisibleBy5(n) {
+           const fibSequence = fibonacci(n);
+           for (let i = 0; i < fibSequence.length; i++) {
+               if (fibSequence[i] % 5 === 0) {
+                   return fibSequence[i];
+               }
+           }
+       }
+return "không tìm thấy trong khoảng chia hết cho 5"
+   }
+   const n = +prompt("Nhập số lượng fibonacci: ");
+   const result = findFirstDivisibleBy5(20);
+   console.log(result);
+   bài 5
+   function sumFibonacci(n) {
+  const fibArray = fibonacci(n);
+  return fibArray.reduce((total, num) => total + num, 0);
+}
+
+console.log(sumFibonacci(20));
+bài 6
+function sumDivisibleBy7(n) {
+  let count = 0, sum = 0, num = 1;
+  while (count < 30) {
+    if (num % 7 === 0) {
+      sum += num;
+      count++;
+    }
+    num++;
+  }
+  return sum;
+}
+
+console.log(sumDivisibleBy7());
+bài 7
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+      console.log("Fizz");
+    } else if (i % 5 === 0) {
+      console.log("Buzz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+
+fizzBuzz(100);
+bài 8
+const button = document.getElementById("playButton");
+const result = document.getElementById("result");
+
+button.addEventListener("click", () => {
+  const min = +(prompt("Nhập số nhỏ nhất của khoảng:"));
+  const max = +(prompt("Nhập số lớn nhất của khoảng:"));
+  const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  let guess;
+  do {
+    guess = +(prompt("Đoán số:"));
+    if (guess === randomNum) {
+      result.textContent = "Chúc mừng bạn đã đoán đúng!";
+    } else if (guess < randomNum) {
+      result.textContent = "Số bạn đoán nhỏ hơn số cần tìm.";
+    } else {
+      result.textContent = "Số bạn đoán lớn hơn số cần tìm.";
+    }
+  } while (guess !== randomNum);
+});
+
+   */
+</script>
+
+</body>
+</html>

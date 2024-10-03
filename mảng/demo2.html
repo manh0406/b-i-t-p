@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr = [];
+  let input;
+  while(true) {
+    input = prompt("Nhập ssoo mà giáo sư muốnkieemrr tra.  ")
+    if(input.toLowerCase() === "done"){
+      break;
+
+    }else {
+      if(isNaN(input)){
+        alert("Giao sư nhập sai. Không tính")
+        continue
+      }
+      arr.push(+input);
+    }
+
+  }
+</script>
+</body>
+</html>
