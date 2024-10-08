@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="fixedText">Type anything slowly</p>
+<input type="text" id="userInput" oninput="updateFixedText()">
+<script >
+  function updateFixedText() {
+    const fixedText = "Type anything slowly";
+    const userInput = document.getElementById("userInput").value;
+    const currentIndex = userInput.length;
+
+    document.getElementById("fixedText").textContent = fixedText.substring(0, currentIndex);}
+</script>
+</body>
+</html>
