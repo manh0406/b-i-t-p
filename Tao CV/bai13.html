@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  td {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+  }
+  .black {
+    background-color: black;
+    color: white;
+  }
+  .white {
+    background-color: white;
+    color: black;
+  }
+</style>
+<body>
+Enter keywords:
+<input type="text" id="keyword" value="">
+<button onclick="search()">Search</button>
+<p id="result"></p>
+<script>
+  const en = ['hi', 'apple', 'orange', 'banana'];
+  const vi = ['xin chao', 'tao', 'cam', 'chuoi'];
+
+// b2 tim kiem gia tri nguoi dung dang nhap trong mang on
+  let index = -1;
+  for (let i = 0; i < en.length; i++){
+    if(end[i] === keyword){
+      index = i;
+      break;
+    }
+
+  }
+  if (index === -1){
+    document.getElementById('result').innerHTML = 'No data';
+
+  } else{
+    document.getElementById('result').innerHTML = vi[index];
+  }
+
+
+
+</script>
+
+</body>
+</html>

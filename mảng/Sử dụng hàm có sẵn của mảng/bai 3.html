@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="inputString" placeholder="Nhập chuỗi">
+<button onclick="chuyenDoi()">Chuyển đổi</button>
+<p id="result"></p>
+<script>
+  function chuyenDoi() {
+    const inputString = document.getElementById("inputString").value;
+    let result = "";
+
+    for (let i = 0; i < inputString.length; i++) {
+      const char = inputString[i];
+      result += char.toUpperCase();
+    }
+
+    document.getElementById("result").textContent = result;
+  }
+</script>
+</body>
+</html>
