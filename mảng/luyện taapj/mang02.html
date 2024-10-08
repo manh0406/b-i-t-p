@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Bài 1: In các phần tử của mảng 2 chiều
+  let a = [
+    [1, 2, 1, 24],
+    [8, 11, 9, 4],
+    [7, 0, 7, 27],
+    [7, 4, 28, 14],
+    [3, 10, 26, 7]
+  ];
+
+  for (let i = 0; i < a.length; i++) {
+    console.log("row " + i);
+    for (let j = 0; j < a[i].length; j++) {
+      console.log(a[i][j]);
+
+    }
+  }
+        //  Bài 2: Đảo ngược mảng ký tự
+  let arr = ['c', 's', 'c', '2', '6', '1'];
+  let reversedArr = arr.reverse();
+  console.log(reversedArr.join('')); // Kết quả: "162csc"
+          //Bài 3: Đếm số ký tự số
+
+  let arr = ['a', '1', 'b', '2', 'c', '3'];
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!isNaN(arr[i])) {
+      count++;
+    }
+  }
+
+  console.log("Số ký tự số:", count);
+         // Bài 4: Đếm số từ trong một chuỗi
+  let str = "Hello world this is a string";
+  let words = str.split(' ');
+  console.log("Số từ:", words.length);
+
+         // Bài 5: Kiểm tra hai chuỗi có bằng nhau không
+
+  let str1 = "Hello";
+  let str2 = "Hello";
+
+  if (str1 === str2) {
+    console.log("Hai chuỗi bằng nhau");
+  } else {
+    console.log("Hai chuỗi khác nhau");
+  }
+
+         // Bài 6: Thay thế ký tự '-' bằng '_'
+
+  let arr = ['a', '-', 'b', '-', 'c'];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === '-') {
+      arr[i] = '_';
+    }
+  }
+
+  console.log(arr);
+</script>
+
+</body>
+</html>
