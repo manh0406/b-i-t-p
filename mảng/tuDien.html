@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Từ điển Anh - Việt</h2>
+<label for="word">Nhập từ tiếng Anh:</label>
+<input type="text" id="word" placeholder="Nhập từ cần tra...">
+<button onclick="lookup()">Tra cứu</button>
+
+<p id="result"></p>
+<script>
+
+  let dictionary = [
+      ["apple", "quả táo"],
+      ["banana", "quả chuối"],
+      ["cat", "con mèo"],
+      ["dog", "con chó"],
+      ["hello", "xin chào"]
+  ];
+
+  function lookup() {
+      let word = document.getElementById("word").value.toLowerCase();
+      let found = false;
+
+      for (let i = 0; i < dictionary.length; i++) {
+          if (dictionary[i][0] === word) {
+              document.getElementById("result").innerHTML = `Nghĩa của từ "${word}" là: ${dictionary[i][1]}`;
+              found = true;
+              break;
+          }
+      }
+
+      if (!found) {
+          document.getElementById("result").innerHTML = `Không tìm thấy từ "${word}" trong từ điển.`;
+      }
+  }
+</script>
+</body>
+</html>
