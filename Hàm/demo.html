@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" id="good">Good<br>
+<input type="checkbox" id="fast">Fast<br>
+<input type="checkbox" id="cheap">Cheap<br>
+</body>
+<script>
+    let  good = document.getElementById("good");
+    let  cheap = document.getElementById("cheap");
+    let  fast= document.getElementById("fast");
+    good.addEventListener("click", function (){
+        if(good.checked && cheap.checked){
+            fast.checked = false;
+        }
+    })
+    cheap.addEventListener("click", function (){
+        if(cheap.checked && fast.checked){
+            good.checked = false;
+        }
+    })
+    fast.addEventListener("click", function (){
+        if(fast.checked && good.checked){
+            cheap.checked = false;
+        }
+    })
+</script>
+</html>

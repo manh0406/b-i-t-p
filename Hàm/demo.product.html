@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  table{
+    width: 500px;
+  }
+  tr{
+    height: 50px;
+  }
+  tr:nth-child(even){
+    background-color: lightgrey;
+
+  }
+  td{
+    text-align: center;
+    width: 200px;
+  }
+  button{
+    background-color: green;
+    color: white;
+    width: 70px;
+    height: 30px;
+    border: none;
+
+  }
+</style>
+<body>
+<div id="result"></div>
+<div style="width: 610px; height:100px; background-color: #f4f4f4;">
+  <div style="padding-top: 40px; padding-left: 40px;">
+    <input type="text" style="width:300px; height: 300px">
+    <button id="add">Add</button>
+  </div>
+</div>
+<script>
+
+  let products = ["Nokia", "Iphone", "Samsung"];
+    function display(products) {
+    let result = "<table>";
+    for (let i = 0; i < products.length; i++) {
+    result += "<tr>";
+    result += "<td>${products[i]}</td>";
+    result += "<td><button>Edit</button></td>";
+    result += "<td><button onclick='deleteProduct(${i})'>Delete</button></td>";
+    result += "</tr>";
+  }
+    result += "</table>";
+    document.getElementById("result").innerHTML = result;
+  }
+document.getElementById("add").addEventListener("click", function (){
+  let productAdd = document.getElementById("productAdd").value;
+  if(productAdd.length > 5 && productAdd.length <100){
+    display(products)
+    document.getElementById("productAdd").value = "";
+    alert("Thêm mới thành công")
+  } else {
+    alert("Tên sản phẩm phải đủ từ 5 đến 100 ký tư ")
+  }
+})
+    function deleteProduct(i){
+      let isDelete = confirm(`Bạn có chắc muốn xóa sản phẩm ${products[i]}?`)
+      if(isDelete){
+        products.slice(i, 1)
+        display(products)
+        alert("xóa thành công")
+      }
+
+    }
+
+
+
+    display(products);
+</script>
+</body>
+</html>
