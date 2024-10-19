@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Mobile {
+    constructor() {
+      this.battery = 100;
+      this.draftMessage = "";
+      this.inbox = [];
+      this.sentBox = [];
+      this.isOn = false;
+    }
+
+    powerOn() {
+      if (this.isOn) {
+        console.log("Điện thoại đã bật.");
+      } else {
+        this.isOn = true;
+        console.log("Điện thoại đã bật.");
+      }
+    }
+
+    powerOff() {
+      if (!this.isOn) {
+        console.log("Điện thoại đã tắt.");
+      } else {
+        this.isOn = false;
+        console.log("Điện thoại đã tắt.");
+      }
+    }
+
+    charge() {
+      if (this.battery < 100) {
+        this.battery++;
+        console.log("Pin đang được sạc.");
+      } else {
+        console.log("Pin đã đầy.");
+      }
+    }
+
+    composeMessage(message) {
+      if (this.isOn) {
+        this.draftMessage = message;
+        this.battery--;
+        console.log("Tin nhắn đã được soạn thảo.");
+      } else {
+        console.log("Vui lòng bật điện thoại.");
+      }
+    }
+
+    sendMessage(receiver) {
+      if (this.isOn && this.battery > 0) {
+        receiver.inbox.push(this.draftMessage);
+        this.sentBox.push(this.draftMessage);
+        this.draftMessage = "";
+        this.battery--;
+        console.log("Tin nhắn đã được gửi.");
+      } else if (!this.isOn) {
+        console.log("Vui lòng bật điện thoại.");
+      } else {
+        console.log("Pin yếu, vui lòng sạc lại.");
+      }
+    }
+
+    receiveMessage() {
+      if (this.isOn) {
+        if (this.inbox.length > 0) {
+          console.log("Tin nhắn mới:");
+          console.log(this.inbox);
+          this.inbox = [];
+          this.battery--;
+        } else {
+          console.log("Không có tin nhắn mới.");
+        }
+      } else {
+        console.log("Vui lòng bật điện thoại.");
+      }
+    }
+
+    viewSentMessages() {
+      if (this.isOn) {
+        if (this.sentBox.length > 0) {
+          console.log("Tin nhắn đã gửi:");
+          console.log(this.sentBox);
+        } else {
+          console.log("Chưa có tin nhắn nào đã gửi.");
+        }
+      } else {
+        console.log("Vui lòng bật điện thoại.");
+      }
+    }
+  }
+
+  // Phương thức start không phải là một phương thức của lớp Mobile
+  function start() {
+    const nokia = new Mobile();
+    const iphone = new Mobile();
+
+    nokia.powerOn();
+    iphone.powerOn();
+
+    nokia.composeMessage("Hello from Nokia!");
+    nokia.sendMessage(iphone);
+
+    iphone.receiveMessage();
+  }
+
+  // Chạy kịch bản
+  start();
+</script>
+</body>
+</html>

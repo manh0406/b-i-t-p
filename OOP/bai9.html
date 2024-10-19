@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function beautifulArray(arr) {
+        const totalSum = arr.reduce((sum, num) => sum + num, 0);
+        if (totalSum % 2 !== 0) return false;
+        let leftSum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            leftSum += arr[i];
+            if (leftSum === totalSum / 2) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    console.log(beautifulArray([1, 2, 3]));
+    console.log(beautifulArray([1, 2, 3, 3]));
+</script>
+</body>
+</html>
