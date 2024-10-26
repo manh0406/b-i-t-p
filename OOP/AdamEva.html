@@ -1,0 +1,88 @@
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu chuyện Adam và Eva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .output {
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+<h1>Câu chuyện Adam và Eva</h1>
+<button id="startButton">Bắt đầu ăn táo</button>
+<div class="output" id="output"></div>
+
+<script>
+    class Apple {
+        constructor() {
+            this._weight = 10;
+        }
+
+        get weight() {
+            return this._weight;
+        }
+
+        set weight(value) {
+            this._weight = value;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        speak(words) {
+            return `${this.name} nói: ${words}`;
+        }
+
+        eatApple(apple) {
+            if (apple.weight > 0) {
+                this.weight += 1;
+                return `${this.name} đã ăn 1 miếng táo. Cân nặng hiện tại: ${this.weight}, Khối lượng táo còn lại: ${apple.weight}`;
+            } else {
+                return `${this.name} không thể ăn nữa vì quả táo đã hết.`;
+            }
+        }
+
+        checkAppleWeight(apple) {
+            return `Khối lượng của quả táo hiện tại: ${apple.weight}`;
+        }
+    }
+
+    const startButton = document.getElementById("startButton");
+    const outputDiv = document.getElementById("output");
+
+    startButton.addEventListener("click", () => {
+
+        let adam = new Human("Adam", "Nam", 70);
+        let eva = new Human("Eva", "Nữ", 60);
+        let apple = new Apple();
+
+        let outputText = "";
+
+        // Mô phỏng hành động Adam và Eva ăn táo
+        while (apple.weight > 0) {
+            outputText += adam.eatApple(apple) + "\n";
+            if (apple.weight > 0) {
+                outputText += eva.eatApple(apple) + "\n";
+            }
+        }
+
+        // Kiểm tra khối lượng của quả táo sau khi Adam và Eva ăn
+        outputText += adam.checkAppleWeight(apple) + "\n";
+        outputText += eva.checkAppleWeight(apple) + "\n";
+
+        outputDiv.textContent = outputText; // Hiển thị kết quả
+    });
+</script>
+</body>
+</html>

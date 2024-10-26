@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student Management Program</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main-style.css">
+</head>
+<style>
+  /* main-style.css */
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .form-student, .list-student {
+    margin-bottom: 30px;
+  }
+
+  label {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  input[type="text"], input[type="radio"] {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: calc(100% - 170px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  button:hover {
+    background-color: #2980b9;
+  }
+
+  #tblStudentInfoList {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  #tblStudentInfoList th, #tblStudentInfoList td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+
+  #tblStudentInfoList th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+  }
+
+  input#txtKeywordSearch {
+    padding: 10px;
+    width: calc(100% - 150px);
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button#btnFilterSearch {
+    margin-left: 10px;
+  }
+
+</style>
+<body>
+<div class="container">
+  <div class="form-student">
+    <h3>Thông tin sinh viên</h3>
+
+    <label>Họ và Tên:</label>
+    <input type="text" id="txtFullName">
+    <br>
+
+    <label>Địa chỉ Email:</label>
+    <input type="text" id="txtEmailAddress">
+    <br>
+
+    <label>Số điện thoại:</label>
+    <input type="text" id="txtPhoneNumber">
+    <br>
+
+    <label>Quê quán:</label>
+    <input type="text" id="txtHomeTown">
+    <br>
+
+    <label>Giới tính:</label>
+    <input type="radio" name="gender" id="male" value="1"> Nam
+    <input type="radio" name="gender" id="female" value="2"> Nữ
+    <br>
+
+    <button type="button" id="btnSaveStudentInfo">Thêm mới</button>
+  </div>
+
+  <div class="list-student">
+    <h3>Danh sách sinh viên</h3>
+    <input type="text" id="txtKeywordSearch" placeholder="Tìm kiếm theo Họ Tên, Email & Số điện thoại">
+    <button type="button" id="btnFilterSearch">Tìm kiếm</button>
+    <table id="tblStudentInfoList"></table>
+  </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
