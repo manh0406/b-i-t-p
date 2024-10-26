@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý khách hàng</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #f7f7f7;
+    }
+    tr:nth-child(odd) {
+      background-color: #f9f9f9;
+    }
+    .message {
+      color: green;
+      margin-top: 10px;
+    }
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    @media (min-width: 768px) {
+      input[type="text"], input[type="email"] {
+        width: auto;
+      }
+      #customerId, #customerName {
+        width: 200px;
+      }
+      #phone, #address {
+        width: 250px;
+      }
+      #email {
+        width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Quản lý khách hàng</h1>
+  <div>
+    <input type="text" id="customerId" placeholder="Mã " required>
+    <input type="text" id="customerName" placeholder="Tên " required>
+    <input type="text" id="phone" placeholder="SĐT" required>
+    <input type="text" id="address" placeholder="Địa chỉ" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <button id="addCustomer">Thêm khách hàng</button>
+  </div>
+  <div id="result"></div>
+</div>
+
+<script>
+  class Customer {
+    constructor(id, name, phone, address, email) {
+      this.id = id;
+      this.name = name;
+      this.phone = phone;
+      this.address = address;
+      this.email = email;
+    }
+  }
+
+  let customers = [
+    new Customer(1, "Dương An Hiền", "0123456789", "Hà Nội", "hien.duong@gmail.com"),
+    new Customer(2, "Nguyễn Minh Châu", "0987654321", "TP.HCM", "chau.nguyen@gmail.com"),
+    new Customer(3, "Trần Văn Sơn", "0912345678", "Đà Nẵng", "son.tran@gmail.com"),
+    new Customer(4, "Lê Phương Thảo", "0934567890", "Huế", "thao.le@gmail.com")
+  ];
+
+  function display(customers) {
+    let result = "<table>";
+    result += "<tr><th>Mã</th><th>Tên</th><th>SĐT</th><th>Địa Chỉ</th><th>Email</th></tr>";
+    for (let i = 0; i < customers.length; i++) {
+      result += "<tr>";
+      result += `<td>${customers[i].id}</td>`;
+      result += `<td>${customers[i].name}</td>`;
+      result += `<td>${customers[i].phone}</td>`;
+      result += `<td>${customers[i].address}</td>`;
+      result += `<td>${customers[i].email}</td>`;
+      result += "</tr>";
+    }
+    result += "</table>";
+    document.getElementById("result").innerHTML = result;
+  }
+
+
+  display(customers);
+
+  document.getElementById("addCustomer").addEventListener("click", function () {
+    const id = document.getElementById("customerId").value;
+    const name = document.getElementById("customerName").value;
+    const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
+    const email = document.getElementById("email").value;
+
+
+    if (id && name && phone && address && email) {
+      customers.push(new Customer(id, name, phone, address, email));
+      display(customers);
+      document.getElementById("customerId").value = "";
+      document.getElementById("customerName").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("address").value = "";
+      document.getElementById("email").value = "";
+      alert("Thêm khách hàng thành công");
+    } else {
+      alert("Vui lòng nhập đầy đủ thông tin!");
+    }
+  });
+</script>
+</body>
+</html>

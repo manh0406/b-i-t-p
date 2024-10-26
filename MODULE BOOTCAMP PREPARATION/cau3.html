@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function twoSum(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+      for (let j = i + 1; j < nums.length; j++) {
+        if (nums[i] + nums[j] === target) {
+          return [i, j];
+        }
+      }
+    }
+    return null;
+  }
+  let n = +(prompt("Nhập số lượng phần tử của mảng (không quá 50): "));
+
+  if (n > 50 || n <= 0) {
+    document.write("Số lượng phần tử không hợp lệ!");
+  } else {
+    let arr = [];
+
+    for (let i = 0; i < n; i++) {
+      let phantu = +prompt(`Nhập phần tử thứ ${i + 1}: `);
+      arr.push(phantu);
+    }
+    let k = +prompt("Nhập số nguyên dương k: ");
+    if (k <= 0) {
+      document.write("k phải là số nguyên dương!");
+    } else {
+      let result = twoSum(arr, k);
+        document.write(`Tổng: ${k}, kết quả: (${arr[result[0]]}, ${arr[result[1]]})`);
+
+    }
+  }
+</script>
+</body>
+</html>
